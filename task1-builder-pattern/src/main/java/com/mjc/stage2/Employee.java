@@ -13,7 +13,7 @@ public class Employee {
     private String email;
     private String carNumber;
 
-    public Employee(EmployeeBuilder employeeBuilder) {
+    public Employee(Employee.EmployeeBuilder employeeBuilder) {
         if (employeeBuilder == null) {
             throw new IllegalArgumentException("Please provide employee builder to build employee object.");
         }
@@ -116,9 +116,7 @@ public class Employee {
             return this;
         }
         public Employee build() {
-            Employee emp = null;
-            emp = new Employee(this);
-            return emp;
+            return new Employee(this);
         }
     }
 }
