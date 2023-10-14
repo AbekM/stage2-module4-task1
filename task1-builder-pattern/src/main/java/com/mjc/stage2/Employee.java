@@ -13,8 +13,13 @@ public class Employee {
     private String email;
     private String carNumber;
 
-    public Employee(){}
     public Employee(EmployeeBuilder employeeBuilder) {
+        if (employeeBuilder == null) {
+            throw new IllegalArgumentException("Please provide employee builder to build employee object.");
+        }
+        if (employeeBuilder.name == null || employeeBuilder.name.trim().isEmpty()) {
+            throw new IllegalArgumentException("Please provide employee name.");
+        }
         this.name = employeeBuilder.name;
         this.lastName = employeeBuilder.lastName;
         this.email = employeeBuilder.email;
