@@ -13,20 +13,7 @@ public class Employee {
     private String email;
     private String carNumber;
 
-    public Employee(Employee.EmployeeBuilder employeeBuilder) {
-        if (employeeBuilder == null) {
-            throw new IllegalArgumentException("Please provide employee builder to build employee object.");
-        }
-        if (employeeBuilder.name == null || employeeBuilder.name.trim().isEmpty()) {
-            throw new IllegalArgumentException("Please provide employee name.");
-        }
-        this.name = employeeBuilder.name;
-        this.lastName = employeeBuilder.lastName;
-        this.email = employeeBuilder.email;
-        this.position = employeeBuilder.position;
-        this.carNumber = employeeBuilder.carNumber;
-        this.phone = employeeBuilder.phone;
-    }
+    public Employee() {}
 
     public String getName() {
         return name;
@@ -116,7 +103,14 @@ public class Employee {
             return this;
         }
         public Employee build() {
-            return new Employee(this);
+            Employee employee = new Employee();
+            employee.setPhone(phone);
+            employee.setEmail(email);
+            employee.setPosition(position);
+            employee.setLastName(lastName);
+            employee.setCarNumber(carNumber);
+            employee.setName(name);
+            return employee;
         }
     }
 }
