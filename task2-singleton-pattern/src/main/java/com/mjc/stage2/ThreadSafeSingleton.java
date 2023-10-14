@@ -1,19 +1,17 @@
 package com.mjc.stage2;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ThreadSafeSingleton {
-    private static volatile ThreadSafeSingleton instance;
+    // Write your code here!
+    private volatile static ThreadSafeSingleton instance;
 
-    public static ThreadSafeSingleton getInstance() {
-        ThreadSafeSingleton localInstance = instance;
-        if (localInstance == null) {
-            synchronized (ThreadSafeSingleton.class) {
-                localInstance = instance;
-                if (localInstance == null) {
-                    instance = localInstance = new ThreadSafeSingleton();
-                }
-            }
+    public static synchronized ThreadSafeSingleton getInstance() {
+        if (instance == null) {
+            instance = new ThreadSafeSingleton();
         }
-        return localInstance;
+        return instance;
     }
 }
