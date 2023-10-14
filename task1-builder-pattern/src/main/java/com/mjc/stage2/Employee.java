@@ -13,6 +13,7 @@ public class Employee {
     private String email;
     private String carNumber;
 
+    public Employee(){}
     public Employee(EmployeeBuilder employeeBuilder) {
         this.name = employeeBuilder.name;
         this.lastName = employeeBuilder.lastName;
