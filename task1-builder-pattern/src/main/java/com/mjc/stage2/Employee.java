@@ -109,5 +109,10 @@ public class Employee {
             this.carNumber = carNumber;
             return this;
         }
+        public Employee build() {
+            Employee emp = null;
+            emp = new Employee(this);
+            return emp;
+        }
     }
 }
