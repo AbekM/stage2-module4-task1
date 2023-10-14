@@ -13,7 +13,8 @@ public class Employee {
     private String email;
     private String carNumber;
 
-    public Employee() {}
+    public Employee() {
+    }
 
     public String getName() {
         return name;
@@ -68,38 +69,35 @@ public class Employee {
     }
 
     public static class EmployeeBuilder {
+        // Write your code here!
         private String name;
         private String lastName;
         private String position;
         private String phone;
         private String email;
         private String carNumber;
-
-        public EmployeeBuilder() {
-            super();
-        }
-       public EmployeeBuilder setName(String name) {
-           this.name = name;
-           return this;
-       }
-        public EmployeeBuilder setLastName(String lastName) {
-            this.lastName = lastName;
+        public EmployeeBuilder setName(String name){
+            this.name=name;
             return this;
         }
-        public EmployeeBuilder setPosition(String position) {
-            this.position = position;
+        public EmployeeBuilder setLastName(String lastName){
+            this.lastName=lastName;
             return this;
         }
-        public EmployeeBuilder setPhone(String phone) {
-            this.phone = phone;
+        public EmployeeBuilder setPosition(String position){
+            this.position=position;
             return this;
         }
-        public EmployeeBuilder setEmail(String email) {
-            this.email = email;
+        public EmployeeBuilder setPhone(String phone){
+            this.phone=phone;
             return this;
         }
-        public EmployeeBuilder setCarNumber(String carNumber) {
-            this.carNumber = carNumber;
+        public EmployeeBuilder setEmail(String email){
+            this.email=email;
+            return this;
+        }
+        public EmployeeBuilder setCarNumber(String carNumber){
+            this.carNumber=carNumber;
             return this;
         }
         public Employee build() {
